@@ -1,6 +1,6 @@
-
+using System.Collections;
 using UnityEngine;
-
+using System.Collections.Generic;
 public class Tower : MonoBehaviour
 {
     [Header("攻击设置")]
@@ -13,6 +13,12 @@ public class Tower : MonoBehaviour
 
     private float nextAttackTime;
     private GameObject currentTarget;
+
+    [Header("弹道设置")]
+    public LineRenderer laserRenderer;
+    public float laserDuration = 0.2f;
+    public Color laserColor = Color.red;
+
 
     void Update()
     {
@@ -49,8 +55,30 @@ public class Tower : MonoBehaviour
             enemy.TakeDamage(damage);
             Debug.Log($"攻击 {currentTarget.name} 造成 {damage} 伤害");
         }
+        ShowLaser(currentTarget.transform.position);
+    }
+    void ShowLaser(Vector3 targetPos)
+    {
+        // 配置激光参数
+        laserRenderer.startColor = laserColor;
+        laserRenderer.endColor = laserColor;
+        laserRenderer.startWidth = 0.1f;
+        laserRenderer.endWidth = 0.1f;
+
+        // 设置路径点
+        laserRenderer.positionCount = 2;
+        laserRenderer.SetPosition(0, transform.position + Vector3.up);
+        laserRenderer.SetPosition(1, targetPos);
+
+        // 协程控制显示时间
+        StartCoroutine(HideLaser());
     }
 
+    IEnumerator HideLaser()
+    {
+        yield return new WaitForSeconds(laserDuration);
+        laserRenderer.positionCount = 0;
+    }
     // 在场景视图中显示攻击范围
     void OnDrawGizmosSelected()
     {
