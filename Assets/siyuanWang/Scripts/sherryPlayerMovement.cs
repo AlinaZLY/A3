@@ -1,26 +1,13 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class sherryPlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     private Rigidbody rb;
-    public Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-    }
-
-    void Update()
-    {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-
-        Vector3 move = new Vector3(h, 0, v);
-
-        // 控制动画状态
-        bool isMoving = move.magnitude > 0.1f;
-        animator.SetBool("isWalking", isMoving);
     }
 
     void FixedUpdate()
