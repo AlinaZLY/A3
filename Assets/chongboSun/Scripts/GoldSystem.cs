@@ -1,30 +1,39 @@
 
+using System;
 using UnityEngine;
 
 public class GoldSystem : MonoBehaviour
 {
-    public static GoldSystem Instance { get; private set; }
-    public int CurrentGold { get; private set; }
+    public static GoldSystem Instance;
+    public event Action<int> OnGoldChanged;
+    private int currentGold = 100;
 
     void Awake()
     {
-        // 单例模式初始化
+        // 单例初始化
         if (Instance == null)
         {
             Instance = this;
-            CurrentGold = 100; // 初始金币
-            DontDestroyOnLoad(gameObject); // 跨场景保留（可选）
+            DontDestroyOnLoad(gameObject); // 跨场景保留
         }
         else
         {
             Destroy(gameObject);
         }
     }
+    public int CurrentGold
+    {
+        get => currentGold;
+        private set
+        {
+            currentGold = value;
+            OnGoldChanged?.Invoke(currentGold);
+        }
+    }
 
     public void AddGold(int amount)
     {
         CurrentGold += amount;
-        Debug.Log($"当前金币：{CurrentGold}"); // 现在明确指向UnityEngine.Debug
     }
 
     public bool SpendGold(int amount)
@@ -35,5 +44,12 @@ public class GoldSystem : MonoBehaviour
             return true;
         }
         return false;
+    }
+    void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
     }
 }
