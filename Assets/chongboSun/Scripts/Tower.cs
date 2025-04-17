@@ -1,4 +1,7 @@
 using System.Collections;
+//using System.Diagnostics;
+
+//using System.Diagnostics;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
@@ -9,7 +12,7 @@ public class Tower : MonoBehaviour
     private float nextAttackTime;
     private LineRenderer laserRenderer;
     private ParticleSystem laserEffect;
-
+    private float laserAttackInterval;
     [Header("组件引用")]
     public Transform turretPivot;  // 炮塔旋转部件
     public Transform firePoint;    // 抛射物发射点
@@ -121,7 +124,8 @@ public class Tower : MonoBehaviour
         Enemy enemy = currentTarget.GetComponent<Enemy>();
         if (enemy != null)
         {
-            enemy.TakeDamage(data.damage * Time.deltaTime); // 持续伤害
+            Debug.Log(data.damage);
+            enemy.TakeDamage(data.damage ); // 持续伤害
 
             // 附加减速效果
             if (data.slowAmount > 0)
@@ -162,6 +166,7 @@ public class Tower : MonoBehaviour
     {
         if (!data.useLaser || currentTarget == null) return;
 
+        Debug.Log("45664");
         // 更新激光位置
         laserRenderer.SetPosition(0, firePoint.position);
         laserRenderer.SetPosition(1, currentTarget.transform.position);
@@ -171,6 +176,7 @@ public class Tower : MonoBehaviour
         {
             laserEffect.transform.position = currentTarget.transform.position;
         }
+        
     }
 
     void OnDrawGizmosSelected()

@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: NewTower
   m_EditorClassIdentifier: 
   towerName: "\u57FA\u7840\u70AE\u5854"
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2270797187428264903, guid: a22cdbb0fa5600c4b9fde1da502e001b, type: 3}
   buildCost: 50
-  towerIcon: {fileID: 0}
-  attackRange: 3
+  towerIcon: {fileID: 21300000, guid: 4f0ff3f74d230e0448e9566bb08f20ca, type: 3}
+  attackRange: 1
   attackRate: 1
-  damage: 10
-  useLaser: 0
-  useProjectile: 1
+  damage: 100
+  useLaser: 1
+  useProjectile: 0
+  slowAmount: 0
+  slowDuration: 2
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 20
