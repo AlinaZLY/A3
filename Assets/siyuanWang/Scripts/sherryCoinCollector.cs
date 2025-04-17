@@ -1,17 +1,32 @@
 using UnityEngine;
+using TMPro;
 
 public class sherryCoinCollector : MonoBehaviour
 {
-    public int coinCount = 0;
+    public int coinCount = 0;              // 当前吃了多少
+    public int totalCoins = 5;             // 一共要吃多少
+    public TextMeshProUGUI coinText;       // UI文字对象
+
+    void Start()
+    {
+        UpdateCoinUI();
+    }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Coin"))
         {
             coinCount++;
-            Destroy(other.gameObject); // 吃掉金币
-            // 你也可以加个音效或粒子效果在这里
-            Debug.Log("吃了金币！当前金币数：" + coinCount);
+            Destroy(other.gameObject);
+            UpdateCoinUI();
+        }
+    }
+
+    void UpdateCoinUI()
+    {
+        if (coinText != null)
+        {
+            coinText.text = coinCount + " / " + totalCoins;
         }
     }
 }
