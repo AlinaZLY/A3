@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
  
 public class RoleController : MonoBehaviour
 {
@@ -10,8 +12,16 @@ public class RoleController : MonoBehaviour
     public float turnSpeed = 10;//旋转速度
     public Transform camTransform; //相机
     Vector3 camForward; //临时三维坐标
+    public Rigidbody rd;
+    public int score = 0;
+    public TMP_Text ui;
 
-    // Update is called once per frame
+    void Start()
+    {
+        //Debug.Log("游戏开始了！");
+        rd = GetComponent<Rigidbody>(); // 调用刚体组件
+    }
+
     void Update()
     {
         Move();
@@ -26,6 +36,7 @@ public class RoleController : MonoBehaviour
         {
             Rotating(h, v);
         }
+        rd.AddForce(new Vector3(h, 0, v));
     }
     //旋转
     void Rotating(float hh, float vv)
@@ -35,4 +46,19 @@ public class RoleController : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(targetDir, Vector3.up);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("发生碰撞了");
+
+        //给Food模板设置好标签，检测到物体对应标签就销毁
+        if (collision.gameObject.tag == "Score")
+        {
+            Destroy(collision.gameObject);
+            GetComponent<AudioSource>().Play ();
+            score++;
+            ui.text = "Score: "+score;
+        }
+    }
+
 }
