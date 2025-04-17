@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     private Transform m_transform;
     //速度
-    public float m_movSpeed = 10;
+    public float m_movSpeed = 4;
  
     void Start()
     {
@@ -22,27 +22,8 @@ public class PlayerMove : MonoBehaviour
         //定义3个值控制移动
         float xm = 0, ym = 0, zm = 0;
  
-        //按键移动    W=上
-        if (Input.GetKey(KeyCode.W))
-        {
-            zm += m_movSpeed * Time.deltaTime;
-        }
-        else if(Input.GetKey(KeyCode.S))//  S=下
-        {
-            zm -= m_movSpeed * Time.deltaTime;
-        }
-        //按键移动    A=左
-        if (Input.GetKey(KeyCode.A))
-        {
-            xm -= m_movSpeed * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.D))// D=右
-        {
-            xm += m_movSpeed * Time.deltaTime;
-        }
- 
         //跳 = C
-        if (Input.GetKey(KeyCode.C))
+        if (Input.GetKey(KeyCode.Space))
         {
             ym += m_movSpeed * Time.deltaTime;
         }
