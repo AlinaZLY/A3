@@ -21,11 +21,13 @@ public class sherryCoinCollector : MonoBehaviour
         {
             coinCount++;
             Destroy(other.gameObject);     // 吃掉金币
+            GetComponent<AudioSource>().Play ();
+
             UpdateCoinUI();
+
             if (coinCount >= 4)
             {
                 window.SetActive(true);
-
             }
         }
     }

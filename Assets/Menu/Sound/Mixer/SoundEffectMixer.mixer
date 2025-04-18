@@ -14,6 +14,39 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-6913457621973325232
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SherrySound
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 1a8d03614a0988a42bc4488c58bef9cf
+  m_Children: []
+  m_Volume: 79f437ac5e6117f458858e2673bbf772
+  m_Pitch: 8a9bc7e19a3bab442906a6dfe5122893
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -6774938640719850258}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &-6774938640719850258
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 21c57fcd142585a4d9aef7cdecb06dbf
+  m_EffectName: Attenuation
+  m_MixLevel: 88e9c42e1145e6c4baf50cf54cd67f72
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-5489720028451384677
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -62,12 +95,15 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 79f437ac5e6117f458858e2673bbf772
+    name: SherrySound
   m_AudioMixerGroupViews:
   - guids:
     - 33a63318bf9aeff4aa7a09cf1aeb1fe6
     - a09b7bedfa4c9bc4b9f66d00916e4dac
     - cc1e7f27c653da743b9db5ec62853869
+    - 1a8d03614a0988a42bc4488c58bef9cf
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -83,6 +119,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: -5489720028451384677}
   - {fileID: 7814639214756741}
+  - {fileID: -6913457621973325232}
   m_Volume: ab806ae4acc2c1b4b9f014a90bb2ca69
   m_Pitch: 4b04d4558d027914e8c03d28d9aeb38b
   m_Send: 00000000000000000000000000000000
