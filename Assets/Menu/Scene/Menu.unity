@@ -1363,7 +1363,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1979736327}
-  m_RootOrder: 19
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &383011734 stripped
 Transform:
@@ -7943,6 +7943,7 @@ Transform:
   - {fileID: 1583939051}
   - {fileID: 1966320449}
   - {fileID: 386758453}
+  - {fileID: 381980700}
   - {fileID: 751460697}
   - {fileID: 2077018656}
   - {fileID: 383011734}
@@ -7955,7 +7956,6 @@ Transform:
   - {fileID: 1291496086}
   - {fileID: 45587722}
   - {fileID: 461386479}
-  - {fileID: 381980700}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8307,7 +8307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -122, y: 123}
+  m_AnchoredPosition: {x: -98.6, y: 122}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2052877461
@@ -8332,8 +8332,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Using keyboard to control Players' movement.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8393,7 +8393,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -27.70317, y: 0, z: -401.4214, w: -6.747261}
+  m_margin: {x: -95.00342, y: 0, z: -401.4214, w: -6.747261}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
