@@ -946,9 +946,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4884309348322066}
   - component: {fileID: 95860439340953006}
+  - component: {fileID: 1248932997}
+  - component: {fileID: 1248932999}
+  - component: {fileID: 1248933000}
   m_Layer: 0
   m_Name: BlueTeddyBear
-  m_TagString: Untagged
+  m_TagString: Score
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -962,7 +965,7 @@ Transform:
   m_GameObject: {fileID: 1861306012643748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7140276, y: 0.7140276, z: 0.7140276}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4054586487763640}
@@ -980,7 +983,7 @@ Animator:
   m_GameObject: {fileID: 1861306012643748}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 9a46d5fde5f96fd4493a8885e36c2788, type: 3}
-  m_Controller: {fileID: 9100000, guid: 5c1537d24e6e0bb438da7465c6a60a8e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2f1d114f55ab5cc4b96c2a406cf6b032, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -990,6 +993,53 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!65 &1248932997
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861306012643748}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.6596932, y: 6.034888, z: 1.2636403}
+  m_Center: {x: -0.14571622, y: 2.517508, z: 0.33560118}
+--- !u!195 &1248932999
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861306012643748}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &1248933000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861306012643748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19ebe3ae5c88c04b824913f4bef5245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1970746056907756
 GameObject:
   m_ObjectHideFlags: 0
