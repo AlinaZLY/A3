@@ -15,6 +15,7 @@ public class RoleController : MonoBehaviour
     public Rigidbody rd;
     public int score = 0;
     public TMP_Text ui;
+    public GameObject menu;
 
     void Start()
     {
@@ -58,6 +59,10 @@ public class RoleController : MonoBehaviour
             GetComponent<AudioSource>().Play ();
             score++;
             ui.text = "Score: "+score;
+            if(score >= 6) 
+            {
+                menu.SetActive(true);
+            }
         }
     }
 
