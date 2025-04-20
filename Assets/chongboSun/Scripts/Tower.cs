@@ -18,6 +18,20 @@ public class Tower : MonoBehaviour
     public Transform firePoint;    // 抛射物发射点
     public ParticleSystem muzzleFlash; // 枪口闪光
 
+    [Header("音效配置")]
+    public AudioClip laserShootSound; // 射击音效文件（拖拽赋值）
+    private AudioSource audioSource;  // 音频组件
+
+    void Start()
+    {
+        // 动态添加 AudioSource（如果未手动挂载）
+        audioSource = gameObject.GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
+
     public void Initialize(TowerData towerData)
     {
         data = towerData;
@@ -125,6 +139,16 @@ public class Tower : MonoBehaviour
 
     void ApplyLaserDamage()
     {
+        laserRenderer.enabled = true;
+        laserRenderer.SetPosition(0, firePoint.position);
+        laserRenderer.SetPosition(1, currentTarget.transform.position);
+
+        // 播放音效（如果音效文件存在）
+        if (laserShootSound != null)
+        {
+            audioSource.PlayOneShot(laserShootSound); // 单次播放（适合短音效）
+        }
+
         Enemy enemy = currentTarget.GetComponent<Enemy>();
         if (enemy != null)
         {
