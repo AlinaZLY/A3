@@ -33,7 +33,7 @@ public class sherryCoinCollector : MonoBehaviour
         }
         else
         {
-            countdownText.text = "Time's up!";
+            countdownText.text = "Failure";
         }
 
         if (timer <= 0f)
