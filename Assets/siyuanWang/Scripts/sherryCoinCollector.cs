@@ -23,7 +23,7 @@ public class sherryCoinCollector : MonoBehaviour
 
     void Update()
     {
-        if (gameEnded) return;
+        if (gameEnded) return;               // 游戏结束，停止计时
 
         timer -= Time.deltaTime;
 
@@ -44,7 +44,6 @@ public class sherryCoinCollector : MonoBehaviour
 
             UpdateCoinUI();
 
-            // 修改成功条件为等于总金币数
             if (coinCount >= totalCoins && !gameEnded)
             {
                 gameEnded = true;
@@ -64,8 +63,7 @@ public class sherryCoinCollector : MonoBehaviour
 
     void CheckFailCondition()
     {
-        // 失败条件改为小于总金币数
-        if (coinCount < totalCoins)
+        if (coinCount < totalCoins && !gameEnded)
         {
             gameEnded = true;
             failWindow.SetActive(true);      // 显示失败窗口
