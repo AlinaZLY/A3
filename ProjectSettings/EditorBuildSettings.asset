@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/siyuanWang/Scenes/siyuanWangScene.unity
-    guid: dd0f61752b3f5d9468b621841e689b9a
-  - enabled: 1
     path: Assets/Menu/Scene/Menu.unity
     guid: a816caabec3ecf245a990a6ead1d5b45
   - enabled: 1
     path: Assets/LiyinZhang/Scene/LiyinZhangScene.unity
     guid: 20187c0984cb6404ebe39ffb52ea6d75
+  - enabled: 1
+    path: Assets/siyuanWang/Scenes/siyuanWangScene.unity
+    guid: dd0f61752b3f5d9468b621841e689b9a
   - enabled: 1
     path: Assets/chongboSun/Scenes/page1.unity
     guid: 935d39828b3f96a4793319a67355318a
