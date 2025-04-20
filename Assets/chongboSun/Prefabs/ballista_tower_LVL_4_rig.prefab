@@ -285,6 +285,7 @@ MonoBehaviour:
   turretPivot: {fileID: 8656146036152076414}
   firePoint: {fileID: 2577332626390626978}
   muzzleFlash: {fileID: 0}
+  laserShootSound: {fileID: 8300000, guid: 8194d3a5648d9c54ea18d308ee8b7794, type: 3}
 --- !u!1 &4612965440705726127
 GameObject:
   m_ObjectHideFlags: 0

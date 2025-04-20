@@ -254,6 +254,7 @@ MonoBehaviour:
   turretPivot: {fileID: 7024805478776643531}
   firePoint: {fileID: 7024805478776643531}
   muzzleFlash: {fileID: 0}
+  laserShootSound: {fileID: 8300000, guid: cd3ec81778fe2c045bc32f29840eb8b7, type: 3}
 --- !u!4 &7024805478776643531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8232308050088692061, guid: f11f551bcf53de940bdde4195b971166, type: 3}
