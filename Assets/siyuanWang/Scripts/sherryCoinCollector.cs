@@ -10,6 +10,7 @@ public class sherryCoinCollector : MonoBehaviour
     public int totalCoins = 4;               // 总金币改为4个
     public int maxCoinsCanEat = 4;           // 最大可吃金币改为4个
     public TextMeshProUGUI coinText;
+    public TextMeshProUGUI countdownText;
 
     public float timer = 60f;                // 倒计时
     private bool gameEnded = false;
@@ -23,9 +24,17 @@ public class sherryCoinCollector : MonoBehaviour
 
     void Update()
     {
-        if (gameEnded) return;
+        if (gameEnded) return;               // 游戏结束，停止计时
 
         timer -= Time.deltaTime;
+        if (timer > 0)
+        {
+            countdownText.text = Mathf.Ceil(timer).ToString();
+        }
+        else
+        {
+            countdownText.text = "Failure";
+        }
 
         if (timer <= 0f)
         {
@@ -44,7 +53,6 @@ public class sherryCoinCollector : MonoBehaviour
 
             UpdateCoinUI();
 
-            // 修改成功条件为等于总金币数
             if (coinCount >= totalCoins && !gameEnded)
             {
                 gameEnded = true;
@@ -64,8 +72,7 @@ public class sherryCoinCollector : MonoBehaviour
 
     void CheckFailCondition()
     {
-        // 失败条件改为小于总金币数
-        if (coinCount < totalCoins)
+        if (coinCount < totalCoins && !gameEnded)
         {
             gameEnded = true;
             failWindow.SetActive(true);      // 显示失败窗口

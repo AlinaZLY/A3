@@ -3,9 +3,11 @@ using TMPro;
 
 public class sherrytime : MonoBehaviour
 {
+
     public float timeLeft = 60f; // 倒计时时间
     public TextMeshProUGUI countdownText;
 
+    /*
     void Update()
     {
         if (timeLeft > 0)
@@ -17,5 +19,5 @@ public class sherrytime : MonoBehaviour
         {
             countdownText.text = "时间到！";
         }
-    }
+    }*/
 }
