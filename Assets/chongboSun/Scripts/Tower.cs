@@ -90,16 +90,20 @@ public class Tower : MonoBehaviour
             if (col.CompareTag("Enemy"))
             {
                 currentTarget = col.gameObject;
+                
                 break;
             }
         }
         if (currentTarget != null)
         {
+            laserRenderer.enabled = true;
             Debug.Log($"当前目标: {currentTarget.name}");
         }
         else
         {
+            laserRenderer.enabled = false;
             Debug.Log("未找到有效目标");
+            
         }
     }
 

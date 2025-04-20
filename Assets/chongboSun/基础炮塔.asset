@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0edbeadef72aacd47bfc39c81559e4a9, type: 3}
-  m_Name: NewTower
+  m_Name: "\u57FA\u7840\u70AE\u5854"
   m_EditorClassIdentifier: 
   towerName: "\u57FA\u7840\u70AE\u5854"
   towerPrefab: {fileID: 2270797187428264903, guid: a22cdbb0fa5600c4b9fde1da502e001b, type: 3}
   buildCost: 50
-  towerIcon: {fileID: 21300000, guid: 4f0ff3f74d230e0448e9566bb08f20ca, type: 3}
+  towerIcon: {fileID: 21300000, guid: 7152cf5e455d86e4d864b42add6c8c27, type: 3}
   attackRange: 1
   attackRate: 1
   damage: 100

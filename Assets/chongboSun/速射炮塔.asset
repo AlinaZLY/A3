@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0edbeadef72aacd47bfc39c81559e4a9, type: 3}
+  m_Name: "\u901F\u5C04\u70AE\u5854"
+  m_EditorClassIdentifier: 
+  towerName: "\u901F\u5C04\u70AE\u5854"
+  towerPrefab: {fileID: 3576749687072985057, guid: 9d327a642086bee44ae41a4f2816af51, type: 3}
+  buildCost: 100
+  towerIcon: {fileID: 21300000, guid: 56d310f3fdc4aef478d945d44f42be5d, type: 3}
+  attackRange: 1
+  attackRate: 0.05
+  damage: 10
+  useLaser: 1
+  useProjectile: 0
+  slowAmount: 0
+  slowDuration: 2
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 20
