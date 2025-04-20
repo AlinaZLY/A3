@@ -16,16 +16,31 @@ public class RoleController : MonoBehaviour
     public int score = 0;
     public TMP_Text ui;
     public GameObject menu;
+    public TMP_Text TimerTXT;
+    public float timeleft;
+    private bool IsCounting;
+    public GameObject menu2;
 
     void Start()
     {
         //Debug.Log("游戏开始了！");
         rd = GetComponent<Rigidbody>(); // 调用刚体组件
+        IsCounting = true;
     }
 
     void Update()
     {
         Move();
+        if(IsCounting)
+        {
+            timeleft -= Time.deltaTime;
+        }
+        TimerTXT.text = timeleft.ToString(format:"0");
+        if (timeleft <= 0 && IsCounting)
+        {
+            IsCounting = false;
+            menu2.SetActive(true);
+        }
     }
     void Move()
     {
@@ -58,10 +73,12 @@ public class RoleController : MonoBehaviour
             Destroy(collision.gameObject);
             GetComponent<AudioSource>().Play ();
             score++;
-            ui.text = "Score: "+score;
+            ui.text = score+"/6 ";
             if(score >= 6) 
             {
                 menu.SetActive(true);
+                IsCounting = false;
+                menu2.SetActive(false);
             }
         }
     }
